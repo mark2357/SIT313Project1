@@ -7,6 +7,8 @@ namespace BreakoutGame
 {
 	public partial class GameViewController : UIViewController
 	{
+		public int difficulty = (int)diff.normal;
+		float score = 0;
 		protected GameViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -55,11 +57,21 @@ namespace BreakoutGame
 			return true;
 		}
 
-		public void GameOver()
+		public void GameOver(float s)
 		{
-			//this.NavigationController.PopViewController(false);
-			DismissViewController(true, null);
-			//PrepareForSegue(,sender)
+			score = s;
+			PerformSegue("GameOver", null);
+			//DismissViewController(false, null);
+		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+		{
+			//base.PrepareForSegue(segue, sender);
+			if (segue.Identifier == "GameOver")
+			{
+				GameOverViewController viewController = (GameOverViewController)segue.DestinationViewController;
+				viewController.score = score;
+			}
 		}
 	}
 }

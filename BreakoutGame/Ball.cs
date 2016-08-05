@@ -15,7 +15,7 @@ namespace BreakoutGame
 		public bool onPaddle = true;
 		public bool reset = false;
 
-		public Ball(CGRect frame, float r)
+		public Ball(CGRect frame, float r, int diff)
 		{
 			var pathBall = new CGPath();
 			radius = r;
@@ -26,7 +26,7 @@ namespace BreakoutGame
 			Position = new CGPoint(frame.Width / 2, frame.Height / 8 + 50);
 			PhysicsBody = SKPhysicsBody.CreateBodyFromPath(pathBall);
 			PhysicsBody.AffectedByGravity = false;
-			currentVelocity = new CGVector(0, 200);
+			currentVelocity = new CGVector(0, 150 + 50 * diff);
 			PhysicsBody.Friction = 0f;
 			PhysicsBody.LinearDamping = 0f;
 

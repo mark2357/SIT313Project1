@@ -20,11 +20,12 @@ namespace BreakoutGame
 		// SKSceneDelegate
 		public Paddle paddle;
 		Ball ball;
-		float score = 0;
+		float score;
 		SKLabelNode scoreLabel;
-		float lives = 3;
+		float lives;
 		SKLabelNode livesLabel;
-		int level = 0;
+		int level;
+		int difficulty = (int)diff.normal;
 
 		public GameViewController gameViewController;
 
@@ -35,6 +36,9 @@ namespace BreakoutGame
 
 		public override void DidMoveToView(SKView view)
 		{
+
+			difficulty = gameViewController.difficulty;
+
 			// Setup your scene here
 			scoreLabel = new SKLabelNode()
 			{
@@ -47,9 +51,11 @@ namespace BreakoutGame
 			};
 			AddChild(scoreLabel);
 
+			lives = 4 - difficulty;
+
 			livesLabel = new SKLabelNode()
 			{
-				Text = "Lives: 3",
+				Text = "Lives: " + lives,
 				FontSize = 20,
 				Position = new CGPoint(Frame.Width - 5, Frame.Height - 5),
 				FontName = "Arial-BoldMT",
@@ -58,10 +64,11 @@ namespace BreakoutGame
 			};
 			AddChild(livesLabel);
 
+
 			PhysicsWorld.ContactDelegate = this;
-			paddle = new Paddle(Frame);
+			paddle = new Paddle(Frame, difficulty);
 			AddChild(paddle);
-			ball = new Ball(Frame, 10);
+			ball = new Ball(Frame, 10, difficulty);
 			AddChild(ball);
 
 			GenerateTiles(0);
@@ -72,7 +79,6 @@ namespace BreakoutGame
 
 			level = 0;
 			score = 0;
-			lives = 3;
 
 		}
 		public void GenerateTiles(int level)
@@ -151,7 +157,7 @@ namespace BreakoutGame
 			//else
 			//livesLabel.Text = "Lives: " + lives.ToString();
 			if (lives <= 0)
-				gameViewController.GameOver();
+				gameViewController.GameOver(score);
 		}
 
 		//void HandleDidBeginContact(object sender, EventArgs args)
@@ -187,7 +193,7 @@ namespace BreakoutGame
 				bodyB.Node.RemoveFromParent();
 				Block.BlockDestroyed();
 				LevelCheck();
-				AddScore(100);
+				AddScore(100 + (50 * difficulty));
 			}
 		}
 		void LevelCheck()
@@ -195,7 +201,7 @@ namespace BreakoutGame
 			if (Block.blockCount == 0)
 			{
 				level++;
-				AddScore(1000);
+				AddScore(1000 + (difficulty * 500));
 				ball.reset = true; 
 				GenerateTiles(level);
 			}

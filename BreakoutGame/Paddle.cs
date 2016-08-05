@@ -8,14 +8,15 @@ namespace BreakoutGame
 {
 	public class Paddle : SKShapeNode
 	{
-		public Paddle(CGRect frame)
+		public Paddle(CGRect frame, int diff)
 		{
 
 			var pathPaddle = new CGPath();
-			pathPaddle.AddArc(-50f, 0f, 15f, 3f * (float)Math.PI / 2f, (float)Math.PI / 2f, true);
-			pathPaddle.AddLineToPoint(50f, 15f);
-			pathPaddle.AddArc(50f, 0f, 15f, (float)Math.PI / 2f, 3f * (float)Math.PI / 2f, true);
-			pathPaddle.AddLineToPoint(-50f, -15f);
+			float paddleSize = 60 - (10 * diff); 
+			pathPaddle.AddArc(-paddleSize, 0f, 15f, 3f * (float)Math.PI / 2f, (float)Math.PI / 2f, true);
+			pathPaddle.AddLineToPoint(paddleSize, 15f);
+			pathPaddle.AddArc(paddleSize, 0f, 15f, (float)Math.PI / 2f, 3f * (float)Math.PI / 2f, true);
+			pathPaddle.AddLineToPoint(-paddleSize, -15f);
 
 			Path = pathPaddle;
 			Position = new CGPoint(frame.Width / 2, frame.Height / 8);
