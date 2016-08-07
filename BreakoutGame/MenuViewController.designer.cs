@@ -14,8 +14,25 @@ namespace BreakoutGame
     [Register ("MenuViewController")]
     partial class MenuViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton HelpButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton StartButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (HelpButton != null) {
+                HelpButton.Dispose ();
+                HelpButton = null;
+            }
+
+            if (StartButton != null) {
+                StartButton.Dispose ();
+                StartButton = null;
+            }
         }
     }
 }

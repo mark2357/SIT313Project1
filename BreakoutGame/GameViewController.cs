@@ -2,6 +2,7 @@
 
 using SpriteKit;
 using UIKit;
+using Foundation;
 
 namespace BreakoutGame
 {
@@ -17,19 +18,22 @@ namespace BreakoutGame
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
+			//NSNumber value = (int)UIInterfaceOrientation.Portrait;
+			//NSString s = (NSString)"orientation";
+			//UIDevice.CurrentDevice.SetValueForKey(value, s);
 			// Configure the view.
 			var skView = (SKView)View;
-			skView.ShowsFPS = true;
-			skView.ShowsNodeCount = true;
+			skView.ShowsFPS = false;
+			skView.ShowsNodeCount = false;
 			/* Sprite Kit applies additional optimizations to improve rendering performance */
 			skView.IgnoresSiblingOrder = true;
 
 			// Create and configure the scene.
 			var scene = SKNode.FromFile<GameScene>("GameScene");
-			scene.ScaleMode = SKSceneScaleMode.AspectFill;
+			scene.ScaleMode = SKSceneScaleMode.AspectFit;
 			scene.Size = skView.Bounds.Size;
 			scene.gameViewController = (GameViewController)Self;
+
 
 
 			// Present the scene.
@@ -40,10 +44,15 @@ namespace BreakoutGame
 		{
 			return true;
 		}
+		//public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
+		//{
+			//return UIInterfaceOrientationMask.Portrait;
+		//}
 
 		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
 		{
-			return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone ? UIInterfaceOrientationMask.AllButUpsideDown : UIInterfaceOrientationMask.All;
+			//return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone ? UIInterfaceOrientationMask.AllButUpsideDown : 
+				           return UIInterfaceOrientationMask.Portrait;
 		}
 
 		public override void DidReceiveMemoryWarning()

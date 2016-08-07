@@ -15,7 +15,13 @@ namespace BreakoutGame
 		int currentDiff = (int)diff.normal;
         public DifficultyViewController (IntPtr handle) : base (handle)
         {
-        }
+			
+		}
+
+		public override void ViewDidLoad()
+		{
+			
+		}
 
 		partial void EasyPressed(UIButton sender)
 		{
@@ -41,6 +47,10 @@ namespace BreakoutGame
 			base.PrepareForSegue(segue, sender);
 			if (segue.Identifier != "Back")
 			{
+				NSNumber value = (int)UIInterfaceOrientation.Portrait;
+				NSString s = (NSString)"orientation";
+				UIDevice.CurrentDevice.SetValueForKey(value, s);
+
 				GameViewController game =  (GameViewController)segue.DestinationViewController;
 				game.difficulty = currentDiff;
 			}

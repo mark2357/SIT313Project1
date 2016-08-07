@@ -95,9 +95,12 @@
     <ImageAsset Include="Assets.xcassets\Spaceship.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Spaceship.imageset\Spaceship.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Button.imageset\Button.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\Button.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GameScene.sks" />
