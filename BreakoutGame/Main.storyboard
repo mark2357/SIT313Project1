@@ -50,6 +50,7 @@
                                     <constraint id="657" firstItem="12" firstAttribute="height" constant="40"/>
                                     <constraint id="658" firstItem="12" firstAttribute="width" constant="160"/>
                                 </constraints>
+                                <rect key="contentStretch" x="0" y="0" width="1" height="1"/>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Breakout Game" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="214.5" y="120" width="171.5" height="21"/>
@@ -87,6 +88,7 @@
                             <constraint id="803" firstItem="4" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="139" priority="750"/>
                             <constraint id="806" firstItem="4" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
                         </constraints>
+                        <rect key="contentStretch" x="0" y="0.0" width="1" height="1"/>
                     </view>
                     <connections>
                         <outlet property="StartButton" destination="12" id="name-outlet-12"/>

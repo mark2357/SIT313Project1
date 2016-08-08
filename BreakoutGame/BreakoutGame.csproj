@@ -97,6 +97,15 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Button.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Button.imageset\Button.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-40x40%402x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-40x40%403x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-60x60%403x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Button.imageset\Buttonx2.png" />
+    <ImageAsset Include="Assets.xcassets\Button.imageset\Buttonx3.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

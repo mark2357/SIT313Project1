@@ -12,11 +12,11 @@ namespace BreakoutGame
 		{
 
 			var pathPaddle = new CGPath();
-			float paddleSize = 60 - (10 * diff); 
-			pathPaddle.AddArc(-paddleSize, 0f, 15f, 3f * (float)Math.PI / 2f, (float)Math.PI / 2f, true);
-			pathPaddle.AddLineToPoint(paddleSize, 15f);
-			pathPaddle.AddArc(paddleSize, 0f, 15f, (float)Math.PI / 2f, 3f * (float)Math.PI / 2f, true);
-			pathPaddle.AddLineToPoint(-paddleSize, -15f);
+			float paddleSize = (60 - (10 * diff)) * (float)frame.Width / 375; 
+			pathPaddle.AddArc(-paddleSize, 0f, 15f * (float)frame.Width / 375, 3f * (float)Math.PI / 2f, (float)Math.PI / 2f, true);
+			pathPaddle.AddLineToPoint(paddleSize, 15f * (float)frame.Width / 375);
+			pathPaddle.AddArc(paddleSize, 0f, 15f * (float)frame.Width / 375, (float)Math.PI / 2f, 3f * (float)Math.PI / 2f, true);
+			pathPaddle.AddLineToPoint(-paddleSize, -15f * (float)frame.Width / 375);
 
 			Path = pathPaddle;
 			Position = new CGPoint(frame.Width / 2, frame.Height / 8);

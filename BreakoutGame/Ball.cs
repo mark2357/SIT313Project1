@@ -18,17 +18,18 @@ namespace BreakoutGame
 		public Ball(CGRect frame, float r, int diff)
 		{
 			var pathBall = new CGPath();
-			radius = r;
+			radius = r * (float)frame.Width / 375;
 			pathBall.AddArc(0f, 0f, radius, 0, 2f * (float)Math.PI, true);
 			Path = pathBall;
 			screenSize = frame;
 			FillColor = new UIColor(1f, 0f, 0f, 1f);
-			Position = new CGPoint(frame.Width / 2, frame.Height / 8 + 50);
+			Position = new CGPoint(frame.Width / 2, frame.Height / 8 + (50 * (float)frame.Width / 375));
 			PhysicsBody = SKPhysicsBody.CreateBodyFromPath(pathBall);
 			PhysicsBody.AffectedByGravity = false;
-			currentVelocity = new CGVector(0, 150 + 50 * diff);
+			currentVelocity = new CGVector(0, (150 + 50 * diff) * (float)frame.Width / 375);
 			PhysicsBody.Friction = 0f;
 			PhysicsBody.LinearDamping = 0f;
+			PhysicsBody.Velocity = new CGVector(0, 0);
 
 			//ball.PhysicsBody.Dynamic = false;
 			PhysicsBody.CategoryBitMask = (uint)Collision_Bits.Ball;
@@ -37,7 +38,7 @@ namespace BreakoutGame
 		}
 		public void Reset()
 		{
-			Position = new CGPoint(((GameScene)Parent).paddle.Position.X, screenSize.Height / 8 + 50);
+			Position = new CGPoint(((GameScene)Parent).paddle.Position.X, screenSize.Height / 8 + (50 * (float)screenSize.Width / 375));
 			onPaddle = true;
 			PhysicsBody.Velocity = new CGVector(0, 0);
 			currentVelocity = new CGVector(0, GetLength(currentVelocity) * 1.1f);
@@ -95,7 +96,7 @@ namespace BreakoutGame
 			if (Position.Y - radius < 0 && currentVelocity.dy < 0)
 			{
 				((GameScene)Parent).DecreaseLives();
-				Position = new CGPoint(((GameScene)Parent).paddle.Position.X, screenSize.Height / 8 + 50);
+				Position = new CGPoint(((GameScene)Parent).paddle.Position.X, screenSize.Height / 8 + (50 * (float)screenSize.Width / 375));
 				onPaddle = true;
 				PhysicsBody.Velocity = new CGVector(0, 0);
 				currentVelocity = new CGVector(0, GetLength(currentVelocity));

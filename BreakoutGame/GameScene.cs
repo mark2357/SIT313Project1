@@ -118,7 +118,7 @@ namespace BreakoutGame
 				*/
 				paddle.Position = new CGPoint(((UITouch)touch).LocationInNode(this).X, paddle.Position.Y);
 				if (ball.onPaddle == true)
-					ball.Position = new CGPoint(((UITouch)touch).LocationInNode(this).X, Frame.Height / 8 + 50);
+					ball.Position = new CGPoint(((UITouch)touch).LocationInNode(this).X, Frame.Height / 8 + (50 * (float)Frame.Width / 375));
 
 			}
 		}
