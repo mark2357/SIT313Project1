@@ -87,6 +87,9 @@
                             <constraint firstItem="15" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="100" id="47" priority="750"/>
                             <constraint id="803" firstItem="4" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="139" priority="750"/>
                             <constraint id="806" firstItem="4" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
+                            <constraint id="898" firstItem="12" firstAttribute="top" secondItem="15" secondAttribute="bottom" constant="200" priority="800" relation="lessThanOrEqual"/>
+                            <constraint id="899" firstItem="15" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="200" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="900" firstItem="30" firstAttribute="top" secondItem="12" secondAttribute="bottom" constant="200" relation="lessThanOrEqual" priority="800"/>
                         </constraints>
                         <rect key="contentStretch" x="0" y="0.0" width="1" height="1"/>
                     </view>
@@ -112,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="159">
-                                <rect key="frame" x="220" y="464" width="160" height="40"/>
+                                <rect key="frame" x="220" y="530" width="160" height="40"/>
                                 <state key="normal" title="Back" backgroundImage="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -126,7 +129,7 @@
                                 </constraints>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="160">
-                                <rect key="frame" x="274" y="120" width="52" height="30"/>
+                                <rect key="frame" x="274" y="50" width="52" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -136,27 +139,26 @@
                                 </constraints>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="161">
-                                <rect key="frame" x="220" y="171" width="160" height="175"/>
+                                <rect key="frame" x="120" y="101" width="360" height="311"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Move the paddle by pressing on the screen.Try to destryoy all of the blocks on the screen by hitting them with the ball. You lose when the ball hits the bottom ofthe sceen 3 times</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <constraints>
-                                    <constraint id="758" firstItem="161" firstAttribute="width" constant="160"/>
-                                    <constraint id="768" firstItem="161" firstAttribute="height" constant="175"/>
-                                </constraints>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="160" firstAttribute="centerX" secondItem="132" secondAttribute="centerX" id="162"/>
                             <constraint firstItem="161" firstAttribute="top" secondItem="160" secondAttribute="bottom" constant="21" id="164" priority="750"/>
-                            <constraint firstItem="160" firstAttribute="top" secondItem="128" secondAttribute="bottom" constant="100" id="165" priority="750"/>
+                            <constraint firstItem="160" firstAttribute="top" secondItem="128" secondAttribute="bottom" constant="30" id="165" priority="750"/>
                             <constraint firstItem="159" firstAttribute="centerX" secondItem="132" secondAttribute="centerX" id="166"/>
                             <constraint firstItem="159" firstAttribute="top" secondItem="161" secondAttribute="bottom" constant="118" id="167" priority="750"/>
-                            <constraint firstItem="129" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="96" id="169" priority="750"/>
+                            <constraint firstItem="129" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="30" id="169" priority="750"/>
                             <constraint id="759" firstItem="132" firstAttribute="centerX" secondItem="161" secondAttribute="centerX"/>
                             <constraint id="778" firstItem="129" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
+                            <constraint id="904" firstItem="161" firstAttribute="leading" secondItem="132" secondAttribute="leading" constant="120"/>
+                            <constraint id="905" firstItem="132" firstAttribute="trailing" secondItem="161" secondAttribute="trailing" constant="120"/>
+                            <constraint id="906" firstItem="160" firstAttribute="top" secondItem="128" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -265,6 +267,12 @@
                             <constraint id="791" firstItem="230" firstAttribute="top" secondItem="229" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
                             <constraint id="792" firstItem="223" firstAttribute="top" secondItem="507" secondAttribute="bottom" constant="47" relation="greaterThanOrEqual"/>
                             <constraint id="795" firstItem="229" firstAttribute="top" secondItem="222" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
+                            <constraint id="909" firstItem="223" firstAttribute="top" secondItem="507" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="910" firstItem="507" firstAttribute="top" secondItem="232" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="911" firstItem="232" firstAttribute="top" secondItem="231" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="912" firstItem="231" firstAttribute="top" secondItem="230" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="913" firstItem="230" firstAttribute="top" secondItem="229" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="914" firstItem="229" firstAttribute="top" secondItem="222" secondAttribute="bottom" constant="150" relation="lessThanOrEqual" priority="800"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -291,7 +299,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="886" destination="6" kind="show"/>
+                                    <segue id="937" destination="6" kind="show"/>
                                 </connections>
                                 <constraints>
                                     <constraint id="700" firstItem="506" firstAttribute="height" constant="40"/>
@@ -332,6 +340,9 @@
                             <constraint id="815" firstItem="509" firstAttribute="top" secondItem="508" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
                             <constraint id="816" firstItem="506" firstAttribute="top" secondItem="509" secondAttribute="bottom" constant="178" relation="greaterThanOrEqual"/>
                             <constraint id="817" firstItem="498" firstAttribute="top" secondItem="506" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
+                            <constraint id="917" firstItem="508" firstAttribute="top" secondItem="497" secondAttribute="bottom" constant="200" relation="lessThanOrEqual" priority="800"/>
+                            <constraint id="920" firstItem="509" firstAttribute="top" secondItem="508" secondAttribute="bottom" constant="200" priority="800" relation="lessThanOrEqual"/>
+                            <constraint id="921" firstItem="506" firstAttribute="top" secondItem="509" secondAttribute="bottom" constant="200" relation="lessThanOrEqual" priority="800"/>
                         </constraints>
                     </view>
                     <connections>
