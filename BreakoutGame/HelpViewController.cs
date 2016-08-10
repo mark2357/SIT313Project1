@@ -10,9 +10,9 @@ namespace BreakoutGame
         {
         }
 
-		partial void BackClick(UIButton sender)
+		partial void BackClick(UIButton sender) //called when back button is pressed
 		{
-			DismissViewController(false, null);
+			DismissViewController(false, null); //returns to previous scene
 			//throw new NotImplementedException();
 		}
 	}

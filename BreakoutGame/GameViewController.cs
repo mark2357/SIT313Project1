@@ -8,9 +8,11 @@ namespace BreakoutGame
 {
 	public partial class GameViewController : UIViewController
 	{
+		//stores some infomation used as input and output of the scene
 		public int difficulty = (int)diff.normal;
 		float score = 0;
-		GameScene scene;
+
+		GameScene scene; //the game scene
 		protected GameViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -19,11 +21,9 @@ namespace BreakoutGame
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			//NSNumber value = (int)UIInterfaceOrientation.Portrait;
-			//NSString s = (NSString)"orientation";
-			//UIDevice.CurrentDevice.SetValueForKey(value, s);
 			// Configure the view.
 			var skView = (SKView)View;
+			//disables several debuging stats
 			skView.ShowsFPS = false;
 			skView.ShowsNodeCount = false;
 			/* Sprite Kit applies additional optimizations to improve rendering performance */
@@ -39,25 +39,13 @@ namespace BreakoutGame
 			// Present the scene.
 			skView.PresentScene(scene);
 		}
-		public override void ViewWillAppear(bool animated)
-		{
-			//base.ViewWillAppear(animated);
-			if (score != 0)
-			{
-				DismissViewController(false, null);
-			}
-		}
 
 		public override bool ShouldAutorotate()
 		{
 			return true;
 		}
-		//public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
-		//{
-			//return UIInterfaceOrientationMask.Portrait;
-		//}
 
-		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
+		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations() //makes the app only work in portrait
 		{
 			//return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone ? UIInterfaceOrientationMask.AllButUpsideDown : 
 				           return UIInterfaceOrientationMask.Portrait;
@@ -74,7 +62,7 @@ namespace BreakoutGame
 			return true;
 		}
 
-		public void GameOver(float s)
+		public void GameOver(float s) //called from the GameScene
 		{
 			score = s;
 			PerformSegue("GameOver", null);
@@ -84,10 +72,10 @@ namespace BreakoutGame
 		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
 		{
 			//base.PrepareForSegue(segue, sender);
-			if (segue.Identifier == "GameOver")
+			if (segue.Identifier == "GameOver") //if it's moving to the game over scene
 			{
 				GameOverViewController viewController = (GameOverViewController)segue.DestinationViewController;
-				viewController.score = score;
+				viewController.score = score; //passes score to game over scene
 			}
 		}
 	}

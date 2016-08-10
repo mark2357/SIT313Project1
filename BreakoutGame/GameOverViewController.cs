@@ -15,13 +15,7 @@ namespace BreakoutGame
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			ScoreLabel.Text += Math.Round(score);
-			//UIViewController[] vc = NavigationController.ViewControllers;
-			//NavigationController.c
-			//for (int i = 1; i < vc.Length; i++)
-			//{
-				//vc[i] = null;
-			//}
+			ScoreLabel.Text += Math.Round(score); //sets the score text to the score value, note the score value is passed through during segue 
 		}
 	}
 }

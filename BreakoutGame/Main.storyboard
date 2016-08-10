@@ -141,9 +141,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="161">
                                 <rect key="frame" x="120" y="101" width="360" height="311"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Move the paddle by pressing on the screen.Try to destryoy all of the blocks on the screen by hitting them with the ball. You lose when the ball hits the bottom ofthe sceen 3 times</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <string key="text">Move the paddle by pressing and draging on the screen. Release the ball from th paddle by swiping up on the screen. Prevent The ball from hitting the bottom of the screen. Try to destroy all of the blocks on the screen by hitting them with the ball. When you destroy all of the blocks on the screen you will go to the next level. You lose when you run out of lives.</string>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

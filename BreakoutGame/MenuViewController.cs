@@ -13,9 +13,7 @@ namespace BreakoutGame
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			//StartButton.BackgroundImageForState(UIControlState.Normal);
-			//StartButton.ImageForState(UIControlState.Normal);
-			StartButton.SetImage(StartButton.ImageView.Image, UIControlState.Normal);
+
 		}
 
 	}
