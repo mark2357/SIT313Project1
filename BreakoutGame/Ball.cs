@@ -95,7 +95,8 @@ namespace BreakoutGame
 
 			if (Position.Y - radius < 0 && currentVelocity.dy < 0)
 			{
-				((GameScene)Parent).DecreaseLives();
+				if (((GameScene)Parent).DecreaseLives() == true)
+					return;
 				Position = new CGPoint(((GameScene)Parent).paddle.Position.X, screenSize.Height / 8 + (50 * (float)screenSize.Width / 375));
 				onPaddle = true;
 				PhysicsBody.Velocity = new CGVector(0, 0);

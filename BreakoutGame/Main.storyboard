@@ -105,7 +105,7 @@
         <!--View Controller-->
         <scene sceneID="130">
             <objects>
-                <viewController id="131" sceneMemberID="viewController">
+                <viewController id="131" sceneMemberID="viewController" customClass="HelpViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="128"/>
                         <viewControllerLayoutGuide type="bottom" id="129"/>
@@ -121,7 +121,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6" kind="show" id="216"/>
+                                    <action selector="BackClick:" destination="131" id="947" eventType="touchUpInside"/>
                                 </connections>
                                 <constraints>
                                     <constraint id="677" firstItem="159" firstAttribute="height" constant="40"/>
@@ -299,7 +299,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="937" destination="6" kind="show"/>
+                                    <segue id="1438" destination="6" kind="show"/>
                                 </connections>
                                 <constraints>
                                     <constraint id="700" firstItem="506" firstAttribute="height" constant="40"/>

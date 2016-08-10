@@ -16,6 +16,12 @@ namespace BreakoutGame
 		{
 			base.ViewDidLoad();
 			ScoreLabel.Text += Math.Round(score);
+			//UIViewController[] vc = NavigationController.ViewControllers;
+			//NavigationController.c
+			//for (int i = 1; i < vc.Length; i++)
+			//{
+				//vc[i] = null;
+			//}
 		}
-    }
+	}
 }

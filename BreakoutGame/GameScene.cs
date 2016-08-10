@@ -26,6 +26,7 @@ namespace BreakoutGame
 		SKLabelNode livesLabel;
 		int level;
 		int difficulty = (int)diff.normal;
+		bool gameOver = false;
 
 		public GameViewController gameViewController;
 
@@ -38,7 +39,7 @@ namespace BreakoutGame
 		{
 
 			difficulty = gameViewController.difficulty;
-
+			gameOver = false;
 			// Setup your scene here
 			scoreLabel = new SKLabelNode()
 			{
@@ -129,18 +130,31 @@ namespace BreakoutGame
 		}
 		public override void Update(double currentTime)
 		{
-			// Called before each frame is rendered
-			if (ball.reset == true)
+			if (gameOver == true)
 			{
-				ball.Reset();
-				ball.reset = false;
+				ball.RemoveAllActions();
+				this.RemoveAllChildren();
+				gameViewController.GameOver(score);
+				paddle = null;
+				ball = null;
+				gameOver = false;
 			}
-			else if (ball.col == true)
+
+			if (ball != null)
 			{
-				ball.col = false;
-				ball.PhysicsBody.Velocity = ball.currentVelocity;
+				// Called before each frame is rendered
+				if (ball.reset == true)
+				{
+					ball.Reset();
+					ball.reset = false;
+				}
+				else if (ball.col == true)
+				{
+					ball.col = false;
+					ball.PhysicsBody.Velocity = ball.currentVelocity;
+				}
+				ball.ScreenColTest();
 			}
-			ball.ScreenColTest();
 		}
 
 		public void AddScore(int s)
@@ -149,7 +163,7 @@ namespace BreakoutGame
 			scoreLabel.Text = "Score: " + score.ToString();
 		}
 
-		public void DecreaseLives()
+		public bool DecreaseLives()
 		{
 			lives--;
 			//if (lives > 1)
@@ -157,7 +171,11 @@ namespace BreakoutGame
 			//else
 			//livesLabel.Text = "Lives: " + lives.ToString();
 			if (lives <= 0)
-				gameViewController.GameOver(score);
+			{
+ 				gameOver = true;
+				return true;
+			}
+			return false;
 		}
 
 		//void HandleDidBeginContact(object sender, EventArgs args)

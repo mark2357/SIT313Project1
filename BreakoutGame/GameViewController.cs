@@ -10,6 +10,7 @@ namespace BreakoutGame
 	{
 		public int difficulty = (int)diff.normal;
 		float score = 0;
+		GameScene scene;
 		protected GameViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -29,15 +30,22 @@ namespace BreakoutGame
 			skView.IgnoresSiblingOrder = true;
 
 			// Create and configure the scene.
-			var scene = SKNode.FromFile<GameScene>("GameScene");
+			scene = SKNode.FromFile<GameScene>("GameScene");
 			scene.ScaleMode = SKSceneScaleMode.AspectFit;
 			scene.Size = skView.Bounds.Size;
 			scene.gameViewController = (GameViewController)Self;
 
 
-
 			// Present the scene.
 			skView.PresentScene(scene);
+		}
+		public override void ViewWillAppear(bool animated)
+		{
+			//base.ViewWillAppear(animated);
+			if (score != 0)
+			{
+				DismissViewController(false, null);
+			}
 		}
 
 		public override bool ShouldAutorotate()

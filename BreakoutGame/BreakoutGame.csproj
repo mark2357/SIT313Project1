@@ -145,6 +145,10 @@
     <Compile Include="GameOverViewController.designer.cs">
       <DependentUpon>GameOverViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpViewController.cs" />
+    <Compile Include="HelpViewController.designer.cs">
+      <DependentUpon>HelpViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
