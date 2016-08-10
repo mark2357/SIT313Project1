@@ -92,8 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Spaceship.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Spaceship.imageset\Spaceship.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Button.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Button.imageset\Button.png" />
@@ -121,6 +119,8 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="Readme.txt" />
+    <None Include="Licences.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

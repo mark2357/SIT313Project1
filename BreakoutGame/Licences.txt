@@ -1,0 +1,5 @@
+﻿Note that this file is basicly empty as both the app icon and the button image is created by me
+While the images used in the game a created dynamicly through code
+
+Button		Created by Mark Lenton using Paint.net (free software avalabe from:http://www.getpaint.net/download.html)
+AppIcons	Created by Mark Lenton from a screenshot of the app running

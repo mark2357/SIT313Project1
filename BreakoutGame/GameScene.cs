@@ -203,9 +203,10 @@ namespace BreakoutGame
 			}
 			else if (bodyB.CategoryBitMask == (uint)Collision_Bits.Block) //colision with block
 			{
+				
+				ball.collisionWithBlock(col.ContactPoint);
 				ball.col = true;
 
-				ball.collisionWithBlock(col.ContactPoint);
 				//destroys the block
 				bodyB.Node.RemoveFromParent();
 				Block.BlockDestroyed();

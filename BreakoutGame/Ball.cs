@@ -60,24 +60,26 @@ namespace BreakoutGame
 
 		public void collisionWithBlock(CGPoint p) //called when it hits the block
 		{
-			//cal
-			CGVector dir = new CGVector(Position.X - p.X, Position.Y - p.Y); //creates a vector between the ball and the collision point
+			if (col == false)
+			{
+				CGVector dir = new CGVector(Position.X - p.X, Position.Y - p.Y); //creates a vector between the ball and the collision point
 
-			//tries to work out if the ball hits a vertical edge or horizontal edge, or corner of the block
-			if (Math.Abs(dir.dx) * 3 < Math.Abs(dir.dy))
-			{
-				currentVelocity = new CGVector(currentVelocity.dx, -currentVelocity.dy); //reverses the vertical vel
-			}
-			else if (Math.Abs(dir.dy) * 3 < Math.Abs(dir.dx))
-			{
-				currentVelocity = new CGVector(-currentVelocity.dx, currentVelocity.dy); //reverses the horizontal vel
-			}
-			else
-			{
-				dir = Normalise(dir); //makes dir have a length of 1
-				float speed = GetLength(currentVelocity); //gets the speed of the ball
-				//sets the current velocity so that ball is moving away from the collision point
-				currentVelocity = new CGVector(dir.dx * speed, dir.dy * speed); 
+				//tries to work out if the ball hits a vertical edge or horizontal edge, or corner of the block
+				if (Math.Abs(dir.dx) * 3 < Math.Abs(dir.dy))
+				{
+					currentVelocity = new CGVector(currentVelocity.dx, -currentVelocity.dy); //reverses the vertical vel
+				}
+				else if (Math.Abs(dir.dy) * 3 < Math.Abs(dir.dx))
+				{
+					currentVelocity = new CGVector(-currentVelocity.dx, currentVelocity.dy); //reverses the horizontal vel
+				}
+				else
+				{
+					dir = Normalise(dir); //makes dir have a length of 1
+					float speed = GetLength(currentVelocity); //gets the speed of the ball
+															  //sets the current velocity so that ball is moving away from the collision point
+					currentVelocity = new CGVector(dir.dx * speed, dir.dy * speed); 
+				}
 			}
 		}
 		private CGVector Normalise(CGVector vect) //makes the length of the inputed vector 1

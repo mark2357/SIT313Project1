@@ -138,8 +138,8 @@
                                     <constraint id="771" firstItem="160" firstAttribute="height" constant="30"/>
                                 </constraints>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="161">
-                                <rect key="frame" x="120" y="101" width="360" height="311"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="161" editable="NO" selectable="NO">
+                                <rect key="frame" x="80" y="101" width="440" height="311"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -156,8 +156,8 @@
                             <constraint firstItem="129" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="30" id="169" priority="750"/>
                             <constraint id="759" firstItem="132" firstAttribute="centerX" secondItem="161" secondAttribute="centerX"/>
                             <constraint id="778" firstItem="129" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
-                            <constraint id="904" firstItem="161" firstAttribute="leading" secondItem="132" secondAttribute="leading" constant="120"/>
-                            <constraint id="905" firstItem="132" firstAttribute="trailing" secondItem="161" secondAttribute="trailing" constant="120"/>
+                            <constraint id="904" firstItem="161" firstAttribute="leading" secondItem="132" secondAttribute="leading" constant="80"/>
+                            <constraint id="905" firstItem="132" firstAttribute="trailing" secondItem="161" secondAttribute="trailing" constant="80"/>
                             <constraint id="906" firstItem="160" firstAttribute="top" secondItem="128" secondAttribute="bottom" constant="10" relation="greaterThanOrEqual"/>
                         </constraints>
                     </view>
@@ -358,7 +358,6 @@
         <segue reference="472"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Spaceship" width="394" height="347"/>
         <image name="Button" width="1600" height="400"/>
     </resources>
 </document>
