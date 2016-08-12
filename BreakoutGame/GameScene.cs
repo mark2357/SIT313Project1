@@ -185,7 +185,7 @@ namespace BreakoutGame
 			SKPhysicsBody bodyA; //bodyA is allways the ball
 			SKPhysicsBody bodyB;
 
-			if (col.BodyA.CategoryBitMask < col.BodyB.CategoryBitMask)
+			if (col.BodyA.CategoryBitMask < col.BodyB.CategoryBitMask) //makes the bodyA the ball
 			{
 				bodyA = col.BodyA;
 				bodyB = col.BodyB;
