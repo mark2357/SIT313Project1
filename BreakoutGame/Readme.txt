@@ -12,4 +12,3 @@ Please not of the following points
 	For Licence information look at Licences.txt
 	The GameScene screen doesn't rotate but the other Views do
 
-	lkdsglkdsf;lsd;f
